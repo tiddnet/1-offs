@@ -1,0 +1,12 @@
+getMySQLstatus
+
+In order to obtain status information from the MySQL we need to be able to obtain information from inside the MySQL Server. In this example, we are using the debian-sys-maint user. 
+
+The user will login, and dump the information to a file that can be read by the Zabbix agent. 
+
+The password for the debian-sys-maint user is saved in clear text (permission restricted to root). In order to read this file the following changes need to be made to the sudoers file.
+
+Cmnd_Alias READMYSQL = /bin/grep password /etc/mysql/debian.cnf 
+zabbix ALL = NOPASSWD: READMYSQL
+
+
