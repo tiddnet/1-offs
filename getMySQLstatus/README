@@ -9,4 +9,5 @@ The password for the debian-sys-maint user is saved in clear text (permission re
 Cmnd_Alias READMYSQL = /bin/grep password /etc/mysql/debian.cnf 
 zabbix ALL = NOPASSWD: READMYSQL
 
-
+getValue.py
+Returns a single value from a tab delimited file based on a key word search. Example read through the file created by getMySQLstatus.
